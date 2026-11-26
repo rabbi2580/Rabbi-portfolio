@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=210eb94d-b5ca-46ba-89d2-8978d8b31ce5
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Tarif Ul Haider Rabbi - CSE graduate focused on machine learning, NLP and LLM fine-tuning." />
+
+    <title>Tarif Ul Haider Rabbi - Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.85);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: 0.3s;
+            font-size: 14px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: #06b6d4;
+            left: 0;
+            bottom: -5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #06b6d4;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            padding: 80px 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
+        .hero-text {
+            flex: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-pic {
+            width: 340px;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 5px solid #06b6d4;
+            box-shadow: 0 15px 45px rgba(6, 182, 212, 0.35);
+            transition: 0.4s ease;
+        }
+
+        .profile-pic:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 55px rgba(6, 182, 212, 0.55);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.35);
+            color: #4ade80;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+        }
+
+        .hero-title {
+            font-size: 60px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .hero-desc {
+            color: #cbd5e1;
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 35px;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 34px;
+            background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(6, 182, 212, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid #06b6d4;
+            color: #06b6d4;
+            box-shadow: none;
+            padding: 12px 32px;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(6, 182, 212, 0.12);
+            box-shadow: none;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #f1f5f9;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-left: 5px solid #06b6d4;
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.35s ease;
+        }
+
+        .experience:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.18);
+        }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .exp-role {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .exp-date {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .exp-company {
+            color: #06b6d4;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .exp-list {
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .exp-list li {
+            margin-bottom: 8px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.35s ease;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: #06b6d4;
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.18);
+        }
+
+        .skill-category {
+            font-size: 18px;
+            font-weight: 700;
+            color: #06b6d4;
+            margin-bottom: 20px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: rgba(6, 182, 212, 0.15);
+            color: #06b6d4;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #06b6d4;
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.18);
+        }
+
+        .project-header {
+            height: 120px;
+            background: linear-gradient(
+                135deg,
+                rgba(6, 182, 212, 0.2),
+                rgba(14, 165, 233, 0.2)
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+        }
+
+        .project-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .project-tag {
+            background: rgba(14, 165, 233, 0.15);
+            color: #0ea5e9;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            color: #06b6d4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            color: #38bdf8;
+        }
+
+        /* ================= EDUCATION & CERTS ================= */
+
+        .education {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-left: 5px solid #06b6d4;
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.35s ease;
+            margin-bottom: 25px;
+        }
+
+        .education:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.18);
+        }
+
+        .edu-school {
+            color: #06b6d4;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .edu-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .edu-meta {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            color: #06b6d4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            color: #38bdf8;
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            padding: 35px 0;
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .profile-pic {
+                width: 260px;
+                height: 340px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero-title {
+                font-size: 34px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+
+                <div class="logo">TR</div>
+
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Open to entry-level AI/ML roles
+                    </div>
+
+                    <h1 class="hero-title">
+                        Tarif Ul Haider Rabbi
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        SAP IT Intern | CSE Graduate | AI &amp; Machine Learning
+                    </p>
+
+                    <p class="hero-desc">
+                        Computer Science graduate from AIUB (Information Systems major)
+                        focused on machine learning, NLP and LLMs. I have fine-tuned
+                        open models such as Gemma and Qwen, worked on speech recognition
+                        (ASR) models, and built Bengali NLP and computer vision projects
+                        end to end, from data preprocessing to deployment. Currently an SAP IT
+                        Intern at Anwar Group of Industries, supporting SAP Basis administration.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="mailto:haiderrabbi06@gmail.com" class="cta-button">
+                            Get In Touch
+                        </a>
+                        <a href="#projects" class="cta-button cta-secondary">
+                            View Projects
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="rabbi.jpeg"
+                        alt="Tarif Ul Haider Rabbi"
+                        class="profile-pic"
+                    />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience">
+        <div class="container">
+
+            <h2 class="section-title">
+                Experience
+            </h2>
+
+            <div class="experience" style="margin-bottom: 25px;">
+
+                <div class="exp-top">
+                    <div class="exp-role">SAP IT Intern</div>
+                    <div class="exp-date">Nov 2026 – Present</div>
+                </div>
+
+                <div class="exp-company">Anwar Group of Industries</div>
+
+                <ul class="exp-list">
+                    <li>Supporting SAP Basis administration, including system monitoring, work process and background job checks, and routine health checks across the SAP landscape.</li>
+                    <li>Assisting with user and authorization management, client and transport management, and system landscape tasks.</li>
+                    <li>Learning SAP system troubleshooting through log analysis, dump and error review, and performance monitoring alongside the IT team.</li>
+                </ul>
+
+            </div>
+
+            <div class="experience">
+
+                <div class="exp-top">
+                    <div class="exp-role">Support Engineer Intern</div>
+                    <div class="exp-date">Jun 2026 – Sep 2026 · Dhaka, Bangladesh</div>
+                </div>
+
+                <div class="exp-company">Innovative Techworks Group</div>
+
+                <ul class="exp-list">
+                    <li>Trained and fine-tuned LLMs, experimenting with pre-trained models including Gemma and Qwen.</li>
+                    <li>Worked on ASR models through audio annotation, model training and fine-tuning.</li>
+                    <li>Developed and maintained backend features and APIs for EDUCRM using Django and Python.</li>
+                    <li>Built an ML-based location solution using the Google Maps Places API, with hands-on exposure to AWS, Azure and Cloudflare.</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+        <div class="container">
+
+            <h2 class="section-title">
+                Technical Skills
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-category">🤖 AI &amp; Machine Learning</div>
+                    <div class="skill-items">
+                        <span class="skill-badge">Machine Learning</span>
+                        <span class="skill-badge">Deep Learning</span>
+                        <span class="skill-badge">NLP</span>
+                        <span class="skill-badge">Computer Vision</span>
+                        <span class="skill-badge">LLMs</span>
+                        <span class="skill-badge">RAG</span>
+                        <span class="skill-badge">Model Fine-tuning</span>
+                        <span class="skill-badge">Transfer Learning</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-category">🧰 ML Tools</div>
+                    <div class="skill-items">
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">TensorFlow</span>
+                        <span class="skill-badge">Scikit-learn</span>
+                        <span class="skill-badge">Hugging Face</span>
+                        <span class="skill-badge">OpenCV</span>
+                        <span class="skill-badge">Sentence-Transformers</span>
+                        <span class="skill-badge">Gradio</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-category">📊 Data</div>
+                    <div class="skill-items">
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">NumPy</span>
+                        <span class="skill-badge">Matplotlib</span>
+                        <span class="skill-badge">EDA</span>
+                        <span class="skill-badge">Feature Engineering</span>
+                        <span class="skill-badge">Data Preprocessing</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">Oracle</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-category">💻 Programming</div>
+                    <div class="skill-items">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">C#</span>
+                        <span class="skill-badge">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-category">🌐 Web Development</div>
+                    <div class="skill-items">
+                        <span class="skill-badge">Django</span>
+                        <span class="skill-badge">FastAPI</span>
+                        <span class="skill-badge">Flask</span>
+                        <span class="skill-badge">REST APIs</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Next.js</span>
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">PHP</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-category">☁️ Cloud, DevOps &amp; Other</div>
+                    <div class="skill-items">
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Azure</span>
+                        <span class="skill-badge">Cloudflare</span>
+                        <span class="skill-badge">Git &amp; GitHub</span>
+                        <span class="skill-badge">Arduino</span>
+                        <span class="skill-badge">MPU6050</span>
+                        <span class="skill-badge">Figma</span>
+                        <span class="skill-badge">Notion</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+        <div class="container">
+
+            <h2 class="section-title">
+                Featured Projects
+            </h2>
+
+            <div class="projects-grid">
+
+                <!-- Project 1: AgriBot -->
+
+                <div class="project-card">
+                    <div class="project-header">🌾</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">AgriBot – Bengali Agricultural Assistant</h3>
+
+                        <p class="project-desc">
+                            Bengali AI chatbot that uses NLP and Sentence-BERT semantic
+                            search to answer questions on crops, diseases, pests,
+                            fertilizers and irrigation. Integrated with Flask and
+                            WhatsApp for real-world use.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Sentence-BERT</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">WhatsApp</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/rabbi2580/AgriBot_BD"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Project 2: Crop disease classification -->
+                <!-- TODO: add your Kaggle / GitHub link below once it is public -->
+
+                <div class="project-card">
+                    <div class="project-header">🍃</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Crop Disease Classification</h3>
+
+                        <p class="project-desc">
+                            Lightweight hybrid CNN + Transformer model that classifies
+                            24 fruit and leaf disease classes from the ABCGMP dataset,
+                            built as a compact alternative to heavier pre-trained models.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">Transformer</span>
+                            <span class="project-tag">Computer Vision</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Project 3: Fake news detection -->
+                <!-- TODO: add a link (GitHub / paper) if you have one -->
+
+                <div class="project-card">
+                    <div class="project-header">📰</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Explainable Fake News Detection</h3>
+
+                        <p class="project-desc">
+                            Course research project on detecting fake news with
+                            explainable machine learning on the ISOT dataset, written up
+                            as an IEEE-format paper.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Explainable AI</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Project 4: Brain tumor -->
+
+                <div class="project-card">
+                    <div class="project-header">🧠</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Brain Tumor Detection</h3>
+
+                        <p class="project-desc">
+                            Computer vision based MRI brain tumor detection system using
+                            a CNN, evaluated with accuracy, ROC curve and confusion
+                            matrix.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">Deep Learning</span>
+                            <span class="project-tag">Computer Vision</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/rabbi2580/Brain-Tumor-MRI-Detection-using-CNN-model"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Project 5: Heart failure -->
+
+                <div class="project-card">
+                    <div class="project-header">❤️</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Heart Failure Detection</h3>
+
+                        <p class="project-desc">
+                            Machine learning project predicting heart failure using data
+                            preprocessing, feature engineering and classification models,
+                            evaluated with accuracy, precision and confusion matrix.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Scikit-learn</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/rabbi2580/Machine-Learning--Heart-Failure-Disease"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Project 6: Diabetes -->
+
+                <div class="project-card">
+                    <div class="project-header">🩺</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Diabetes Prediction</h3>
+
+                        <p class="project-desc">
+                            Diabetes prediction app built with feature engineering and
+                            classification models, deployed with Hugging Face and Gradio.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Gradio</span>
+                            <span class="project-tag">Hugging Face</span>
+                            <span class="project-tag">ML</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/rabbi2580/Diabetes-prediction"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Project 7: Smart City -->
+
+                <div class="project-card">
+                    <div class="project-header">🏙️</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Smart City Corporation System</h3>
+
+                        <p class="project-desc">
+                            Web platform with registration and login, password
+                            management, property browsing, online issue reporting and
+                            location-based search, built with an MVC workflow in PHP and
+                            JavaScript.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">MVC</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/rabbi2580/Smart-City-Hub_webtech"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Project 8: Book shop -->
+
+                <div class="project-card">
+                    <div class="project-header">📚</div>
+                    <div class="project-content">
+
+                        <h3 class="project-title">Online Book Shop (Buy &amp; Rent)</h3>
+
+                        <p class="project-desc">
+                            C# application where users can buy or rent books.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Desktop App</span>
+                            <span class="project-tag">OOP</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/rabbi2580/Online-Book-Shop-Buy-Rent-Book"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+        <div class="container">
+
+            <h2 class="section-title">
+                Education &amp; Certifications
+            </h2>
+
+            <div class="education">
+                <div class="edu-school">
+                    American International University-Bangladesh (AIUB)
+                </div>
+                <div class="edu-title">
+                    B.Sc. in Computer Science &amp; Engineering
+                </div>
+                <div class="edu-meta">
+                    Major: Information Systems | 2023 – Sep 2026 | CGPA: 3.34
+                </div>
+            </div>
+
+            <div class="education">
+                <div class="edu-school">
+                    Cloudly Infotech Limited
+                </div>
+                <div class="edu-title">
+                    Code to Cloud: Practical DevOps with AWS
+                </div>
+                <div class="edu-meta">
+                    Certificate of Participation | March 2026
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+        <div class="container">
+
+            <h2 class="section-title">
+                Let's Connect
+            </h2>
+
+            <p style="color:#cbd5e1; margin-bottom:20px;">
+                I'm looking for entry-level AI/ML and software engineering roles,
+                and I'm always open to interesting projects and collaborations.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:haiderrabbi06@gmail.com" class="contact-link">
+                    📧 Email
+                </a>
+
+                <a
+                    href="https://github.com/rabbi2580"
+                    target="_blank"
+                    rel="noopener"
+                    class="contact-link"
+                >
+                    💻 GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/haider-rabbi-2a55b5306/"
+                    target="_blank"
+                    rel="noopener"
+                    class="contact-link"
+                >
+                    💼 LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © 2026 Tarif Ul Haider Rabbi | Based in Dhaka, Bangladesh
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
